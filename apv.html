@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <title>Falcon City Regelgeving</title>
-  <meta name="description" content="Dit is de APV van Falcon City">
+  <title>Falcon City - Regelgeving</title>
+  <meta name="description" content="Officiële APV website | Falcon City">
   <meta name="author" content="Xander">
   <link rel="icon" type="image/x-icon" href="logo.png">
 
@@ -1926,51 +1926,7 @@
       }
       return "";
     }
-
-    const setCookie = (name, value, days, path, domain, secure) => {
-      let cookie = `${name}=${encodeURIComponent(value)}`;
-
-      // Add expiry date
-      if (days) {
-        const expiry = new Date();
-        expiry.setDate(expiry.getDate() + days);
-        cookie += `; expires=${expiry.toUTCString()}`;
-      }
-
-      // Add Path, Domain, and Secure
-      if (path) cookie += `; path=${path}`;
-      if (domain) cookie += `; domain=${domain}`;
-      if (secure) cookie += `; secure`;
-
-      // Set an HTTP cookie
-      document.cookie = cookie;
-    };
-
-    var hasLogin = getCookie('login');
-
-    if (window.location.origin.indexOf('file') !== -1) {
-      document.body.classList.add("access-guaranted");
-    } else {
-      if (hasLogin.length == 0) {
-        var sign = prompt("Access password:");
-        if (loginSuccess(sign)) {
-          document.body.classList.add("access-guaranted");
-          setCookie('login', 'true', 1);
-        } else {
-          document.body.remove();
-          setCookie('login', '', 1);
-        }
-      } else {
-        document.body.classList.add("access-guaranted");
-      }
-    }
-
-    function loginSuccess(b) {
-      // var _0xe2d3=["\x45\x6E\x73\x61\x69\x6D\x61\x64\x61\x49\x67\x75\x61\x6C\x61\x64\x61"];var a=_0xe2d3[0]
-      // return b && b === a;
-      return true;
-    }
-
+    
     $(window).on('load resize', function () {
       //Add/remove class based on browser size when load/resize
       var w = $(window).width();
