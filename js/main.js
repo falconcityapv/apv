@@ -2,6 +2,7 @@
 $(document).ready(function() {
 
   'use strict';
+  $("#main-nav, #main-nav-subpage").slideDown(700);
 
   // ========================================================================= //
   //  //SMOOTH SCROLL
